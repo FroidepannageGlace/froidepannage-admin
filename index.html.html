@@ -9,8 +9,6 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--deep:#0d3d5e;--blue:#1a7abf;--sky:#7ec8e3;--gold:#d4a843;--gold-l:#fef7e6;--ice:#e8f6fc;--off:#f5fafd;--muted:#6a8fa8;--text:#0d2133;--green:#1a7a4a;--red:#e24b4a;}
 body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
-
-/* LOGIN */
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d3d5e,#1a5a8a);padding:20px;}
 .login-card{background:#fff;border-radius:24px;padding:40px 36px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,.2);}
 .login-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--deep);text-align:center;margin-bottom:4px;}
@@ -21,20 +19,19 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .form-label{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px;display:block;}
 .form-input{width:100%;background:var(--off);border:1.5px solid rgba(126,200,227,.25);border-radius:12px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;}
 .form-input:focus{border-color:var(--sky);}
-.login-btn{width:100%;background:linear-gradient(135deg,#2589d0,#1a7abf,#155d9a);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;padding:14px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 5px 0 #0d4570,0 7px 16px rgba(13,61,94,.25);margin-top:6px;transition:transform .1s;}
+.login-btn{width:100%;background:linear-gradient(135deg,#2589d0,#1a7abf,#155d9a);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;padding:14px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 5px 0 #0d4570;margin-top:6px;transition:transform .1s;}
 .login-btn:active{transform:translateY(2px);}
 .login-error{background:#fef0f0;border:1px solid rgba(226,75,74,.2);border-radius:10px;padding:10px 14px;font-size:12px;color:var(--red);margin-top:10px;display:none;}
 .login-error.show{display:block;}
-
-/* MAIN */
 .main{display:none;min-height:100vh;flex-direction:column;}
 .main.show{display:flex;}
 .header{background:linear-gradient(135deg,var(--deep),#1a5a8a);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .header-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;}
 .header-logo em{color:#ffd97a;font-style:normal;}
-.header-right{display:flex;align-items:center;gap:12px;}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .header-badge{background:rgba(212,168,67,.2);border:1px solid rgba(212,168,67,.3);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:600;color:#ffd97a;}
 .logout-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:rgba(255,255,255,.7);cursor:pointer;font-family:'DM Sans',sans-serif;}
+.refresh-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:5px 12px;font-size:11px;color:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .nav-tabs{background:rgba(13,61,94,.95);padding:0 24px;display:flex;gap:0;overflow-x:auto;}
 .nav-tabs::-webkit-scrollbar{display:none;}
 .nav-tab{padding:14px 18px;font-size:13px;font-weight:500;color:rgba(255,255,255,.45);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;background:none;border-left:none;border-right:none;border-top:none;font-family:'DM Sans',sans-serif;}
@@ -42,26 +39,19 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .content{flex:1;padding:24px;overflow-y:auto;}
 .tab-pane{display:none;}
 .tab-pane.active{display:block;}
-
-/* CARDS */
 .card{background:#fff;border-radius:16px;border:0.5px solid #dce8f0;overflow:hidden;margin-bottom:20px;}
 .card-header{background:linear-gradient(135deg,var(--deep),#1a5a8a);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
 .ch-title{font-size:14px;font-weight:600;color:#fff;}
 .ch-sub{font-size:11px;color:rgba(255,255,255,.5);}
 .card-body{padding:18px;}
-
-/* METRICS */
-.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px;}
 .metric{background:#fff;border-radius:14px;padding:16px;border:0.5px solid #dce8f0;box-shadow:0 2px 8px rgba(13,61,94,.04);}
-.metric-val{font-size:28px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.metric-val{font-size:26px;font-weight:700;color:var(--text);margin-bottom:4px;}
 .metric-val.blue{color:var(--blue);}
 .metric-val.gold{color:#b8860b;}
 .metric-val.green{color:var(--green);}
 .metric-label{font-size:11px;color:var(--muted);}
-
-/* ORDERS */
-.orders-list{display:flex;flex-direction:column;gap:8px;}
-.order-item{background:var(--off);border-radius:12px;padding:12px 16px;display:flex;align-items:flex-start;justify-content:space-between;border:0.5px solid #dce8f0;transition:box-shadow .2s;}
+.order-item{background:var(--off);border-radius:12px;padding:12px 16px;display:flex;align-items:flex-start;justify-content:space-between;border:0.5px solid #dce8f0;margin-bottom:8px;}
 .order-item:hover{box-shadow:0 4px 12px rgba(13,61,94,.08);}
 .oi-name{font-size:13px;font-weight:600;color:var(--text);}
 .oi-detail{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5;}
@@ -73,41 +63,17 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .tag-new{background:#e8f4fc;color:#1a6fa8;}
 .tag-vip{background:#fef7e6;color:#b8860b;}
 .tag-std{background:var(--off);color:var(--muted);border:1px solid #dce8f0;}
-
-/* STATUS BTN */
 .status-btn{font-size:10px;padding:3px 8px;border-radius:100px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;background:#e8f9f0;color:var(--green);}
 .status-btn.pending{background:#fff3cd;color:#856404;}
-
-/* ROUTE */
-.route-box{background:var(--off);border-radius:14px;padding:16px;border:0.5px solid #dce8f0;margin-bottom:16px;}
-.route-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;}
-.stops{display:flex;flex-direction:column;}
-.stop{display:flex;align-items:flex-start;gap:10px;padding:5px 0;}
-.stop-num{width:24px;height:24px;border-radius:50%;background:var(--deep);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.stop-name{font-size:12px;font-weight:600;color:var(--text);}
-.stop-addr{font-size:11px;color:var(--muted);}
-.stop-kg{font-size:11px;font-weight:600;color:var(--blue);}
-.connector{width:1px;height:10px;background:#dce8f0;margin-left:12px;}
-.route-btns{display:flex;gap:8px;margin-top:14px;}
-.route-btn{flex:1;border:none;border-radius:10px;padding:10px;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'DM Sans',sans-serif;}
-.btn-maps{background:linear-gradient(180deg,#eef7fd,#e0f0fa);color:#1a6fa8;}
-.btn-waze{background:linear-gradient(180deg,#fffbec,#fef3d0);color:#b8860b;}
-
-/* CRM */
-.crm-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
 .crm-tab{padding:7px 14px;border-radius:100px;border:1px solid #dce8f0;background:var(--off);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;}
 .crm-tab.active{background:var(--blue);color:#fff;border-color:var(--blue);}
 .crm-pane{display:none;}
 .crm-pane.active{display:block;}
-
-/* TABLE */
 .data-table{width:100%;border-collapse:collapse;}
 .data-table th{font-size:11px;font-weight:600;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid #dce8f0;white-space:nowrap;}
 .data-table td{font-size:12px;color:var(--text);padding:10px 10px;border-bottom:0.5px solid rgba(126,200,227,.1);}
 .data-table tr:last-child td{border-bottom:none;}
 .data-table tr:hover td{background:var(--off);}
-
-/* CHART */
 .bar-chart{display:flex;gap:6px;align-items:flex-end;height:120px;margin-bottom:8px;}
 .bar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;}
 .bar-fill{background:linear-gradient(180deg,var(--sky),var(--blue));border-radius:4px 4px 0 0;width:100%;min-height:4px;}
@@ -115,8 +81,6 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .bar-value{font-size:10px;font-weight:600;color:var(--text);}
 .bar-col.current .bar-fill{background:linear-gradient(180deg,#ffd97a,var(--gold));}
 .bar-col.current .bar-label{color:var(--gold);font-weight:600;}
-
-/* COMPTA */
 .compta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;}
 .compta-card{background:var(--off);border-radius:12px;padding:14px;border:0.5px solid #dce8f0;}
 .cc-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
@@ -127,21 +91,9 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .cc-sub{font-size:11px;color:var(--muted);margin-top:3px;}
 .export-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:1px solid #dce8f0;background:linear-gradient(180deg,#fff,var(--off));border-radius:10px;padding:10px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:8px;}
 .export-btn:hover{background:var(--ice);color:var(--blue);border-color:var(--blue);}
-
-/* MISC */
-.notif-box{background:linear-gradient(135deg,var(--ice),#f0fafd);border-radius:12px;padding:14px 16px;border:1px solid rgba(126,200,227,.2);margin-bottom:16px;}
-.nb-title{font-size:13px;font-weight:600;color:var(--deep);margin-bottom:8px;}
-.nb-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;}
-.nb-ico{font-size:16px;flex-shrink:0;}
-.nb-text{font-size:12px;color:var(--muted);line-height:1.5;}
-.nb-text strong{color:var(--text);}
 .status-live{display:inline-flex;align-items:center;gap:6px;background:#e8f9f0;border-radius:100px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--green);}
 .status-live::before{content:'●';font-size:8px;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-.geo-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px;}
-.gs{background:var(--off);border-radius:10px;padding:12px;border:0.5px solid #dce8f0;text-align:center;}
-.gs-val{font-size:20px;font-weight:700;color:var(--blue);}
-.gs-label{font-size:10px;color:var(--muted);margin-top:2px;}
 .loading{text-align:center;padding:40px;color:var(--muted);font-size:13px;}
 .loading-spinner{width:32px;height:32px;border:3px solid #dce8f0;border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 12px;}
 @keyframes spin{to{transform:rotate(360deg);}}
@@ -149,10 +101,57 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 .empty-ico{font-size:40px;margin-bottom:12px;}
 .empty-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;}
 .empty-sub{font-size:12px;line-height:1.6;}
-.refresh-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:5px 12px;font-size:11px;color:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.refresh-btn:hover{background:rgba(255,255,255,.25);}
-.delete-btn{font-size:10px;padding:2px 7px;border-radius:100px;border:1px solid rgba(226,75,74,.3);background:#fef0f0;color:var(--red);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;}
-@media(max-width:768px){.content{padding:14px;}.metrics-grid{grid-template-columns:repeat(2,1fr);}.compta-grid{grid-template-columns:repeat(2,1fr);}.header{padding:12px 16px;}.nav-tab{padding:12px 14px;font-size:12px;}}
+
+/* ===== ROUTE OPTIMISÉE ===== */
+.route-hero{background:linear-gradient(135deg,#0d3d5e,#1a6fa8);border-radius:16px;padding:20px;margin-bottom:16px;color:#fff;}
+.route-hero-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:4px;}
+.route-hero-sub{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:16px;}
+.route-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;}
+.rs-stat{background:rgba(255,255,255,.1);border-radius:12px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,.1);}
+.rs-val{font-size:22px;font-weight:700;color:#fff;}
+.rs-lbl{font-size:10px;color:rgba(255,255,255,.55);margin-top:2px;}
+.route-action-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.rab{border:none;border-radius:12px;padding:13px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Sans',sans-serif;transition:transform .1s;}
+.rab:active{transform:translateY(1px);}
+.rab-maps{background:#fff;color:#1a6fa8;}
+.rab-waze{background:linear-gradient(135deg,#33ccff,#0099cc);color:#fff;}
+.rab-sms{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2);grid-column:span 2;}
+
+.zone-section{margin-bottom:16px;}
+.zone-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--deep);border-radius:12px 12px 0 0;color:#fff;}
+.zone-title{font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.zone-badge{font-size:10px;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:100px;}
+.zone-body{background:#fff;border-radius:0 0 12px 12px;border:0.5px solid #dce8f0;overflow:hidden;}
+
+.stop-row{display:flex;align-items:flex-start;gap:0;border-bottom:0.5px solid rgba(126,200,227,.1);}
+.stop-row:last-child{border-bottom:none;}
+.stop-num-col{width:44px;background:linear-gradient(180deg,var(--ice),#e0f2fc);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;padding:14px 0;flex-shrink:0;border-right:1px solid rgba(126,200,227,.15);}
+.stop-circle{width:26px;height:26px;border-radius:50%;background:var(--deep);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.stop-kg-small{font-size:9px;color:var(--muted);font-weight:600;}
+.stop-info-col{flex:1;padding:12px 14px;}
+.stop-client{font-size:13px;font-weight:700;color:var(--text);}
+.stop-addr{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4;}
+.stop-products{font-size:11px;color:var(--blue);margin-top:4px;font-weight:500;}
+.stop-right-col{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:6px;padding:12px 14px;flex-shrink:0;}
+.stop-price{font-size:13px;font-weight:700;color:var(--blue);}
+.stop-done-btn{font-size:10px;padding:4px 10px;border-radius:100px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;background:#e8f9f0;color:var(--green);white-space:nowrap;}
+.stop-done-btn.done{background:#e8f9f0;color:var(--green);}
+.stop-done-btn.pending{background:#fff3cd;color:#856404;}
+.stop-row.completed{opacity:.55;}
+.stop-row.completed .stop-circle{background:#1a7a4a;}
+
+.algo-info{background:var(--gold-l);border:1px solid rgba(212,168,67,.2);border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:12px;color:#7a5c00;line-height:1.6;}
+.algo-info strong{color:#5a3f00;}
+
+@media(max-width:768px){
+  .content{padding:14px;}
+  .metrics-grid{grid-template-columns:repeat(2,1fr);}
+  .compta-grid{grid-template-columns:repeat(2,1fr);}
+  .header{padding:12px 16px;}
+  .nav-tab{padding:12px 14px;font-size:12px;}
+  .route-stats{grid-template-columns:repeat(3,1fr);}
+  .route-action-btns{grid-template-columns:1fr 1fr;}
+}
 </style>
 </head>
 <body>
@@ -189,7 +188,7 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showTab('dashboard',this)">📊 Dashboard</button>
     <button class="nav-tab" onclick="showTab('commandes',this)">🧊 Commandes</button>
-    <button class="nav-tab" onclick="showTab('route',this)">🗺️ Route</button>
+    <button class="nav-tab" onclick="showTab('route',this)">🗺️ Route chauffeur</button>
     <button class="nav-tab" onclick="showTab('crm',this)">👥 CRM</button>
     <button class="nav-tab" onclick="showTab('compta',this)">📈 Comptabilité</button>
   </div>
@@ -200,20 +199,9 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
     <div class="tab-pane active" id="tab-dashboard">
       <div class="metrics-grid">
         <div class="metric"><div class="metric-val blue" id="m-commandes">—</div><div class="metric-label">Commandes aujourd'hui</div></div>
-        <div class="metric"><div class="metric-val" id="m-kg">—</div><div class="metric-label">kg commandés aujourd'hui</div></div>
+        <div class="metric"><div class="metric-val" id="m-pending">—</div><div class="metric-label">En attente de livraison</div></div>
         <div class="metric"><div class="metric-val gold" id="m-ca">—</div><div class="metric-label">CA HT aujourd'hui</div></div>
         <div class="metric"><div class="metric-val green" id="m-clients">—</div><div class="metric-label">Total clients inscrits</div></div>
-      </div>
-      <div class="card">
-        <div class="card-header"><span class="ch-title">Notifications automatiques</span><span class="ch-sub">Système actif</span></div>
-        <div class="card-body">
-          <div class="notif-box">
-            <div class="nb-title">🔔 Ce qui se passe automatiquement</div>
-            <div class="nb-row"><span class="nb-ico">📧</span><div class="nb-text">Le client reçoit un <strong>email de confirmation</strong> immédiatement après sa commande via Brevo.</div></div>
-            <div class="nb-row"><span class="nb-ico">🔔</span><div class="nb-text">Tu reçois une <strong>notification admin</strong> avec le détail de la commande et les coordonnées du client.</div></div>
-            <div class="nb-row"><span class="nb-ico">📊</span><div class="nb-text">Chaque commande est <strong>automatiquement enregistrée</strong> dans Firebase et apparaît ici en temps réel.</div></div>
-          </div>
-        </div>
       </div>
       <div class="card">
         <div class="card-header"><span class="ch-title">Dernières commandes</span><span class="ch-sub" id="dash-last-update">Chargement...</span></div>
@@ -236,29 +224,39 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
       </div>
     </div>
 
-    <!-- ROUTE -->
+    <!-- ROUTE OPTIMISÉE -->
     <div class="tab-pane" id="tab-route">
-      <div class="card">
-        <div class="card-header"><span class="ch-title">Route chauffeur</span><span class="ch-sub" id="route-date">Commandes en attente</span></div>
-        <div class="card-body">
-          <div class="metrics-grid" style="margin-bottom:16px;">
-            <div class="metric"><div class="metric-val blue" id="route-stops">—</div><div class="metric-label">Arrêts</div></div>
-            <div class="metric"><div class="metric-val" id="route-kg">—</div><div class="metric-label">kg total</div></div>
-          </div>
-          <div id="route-stops-list"><div class="loading"><div class="loading-spinner"></div>Chargement de la route...</div></div>
-          <div class="route-btns" id="route-btns" style="display:none;">
-            <button class="route-btn btn-maps" id="btn-maps">📍 Google Maps</button>
-            <button class="route-btn btn-waze" id="btn-waze">🗺️ Waze</button>
-          </div>
+
+      <div class="route-hero">
+        <div class="route-hero-title">🗺️ Route optimisée du jour</div>
+        <div class="route-hero-sub">Mise à jour automatique à chaque nouvelle commande</div>
+        <div class="route-stats">
+          <div class="rs-stat"><div class="rs-val" id="r-stops">—</div><div class="rs-lbl">Arrêts</div></div>
+          <div class="rs-stat"><div class="rs-val" id="r-kg">—</div><div class="rs-lbl">kg total</div></div>
+          <div class="rs-stat"><div class="rs-val" id="r-ca">—</div><div class="rs-lbl">CA HT</div></div>
         </div>
+        <div class="route-action-btns">
+          <button class="rab rab-maps" id="btn-maps-main">📍 Google Maps</button>
+          <button class="rab rab-waze" id="btn-waze-main">🗺️ Waze</button>
+          <button class="rab rab-sms" id="btn-sms-main">📋 Copier la feuille de route chauffeur</button>
+        </div>
+      </div>
+
+      <div class="algo-info">
+        <strong>🧠 Comment fonctionne l'optimisation ?</strong><br>
+        Les adresses sont automatiquement triées par zone géographique (arrondissement de Marseille et communes proches), puis regroupées pour minimiser les allers-retours. Google Maps optimise ensuite l'itinéraire final automatiquement.
+      </div>
+
+      <div id="route-zones">
+        <div class="loading"><div class="loading-spinner"></div>Calcul de la route optimisée...</div>
       </div>
     </div>
 
     <!-- CRM -->
     <div class="tab-pane" id="tab-crm">
-      <div class="crm-tabs">
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
         <button class="crm-tab active" onclick="showCRM('vue',this)">Vue globale</button>
-        <button class="crm-tab" onclick="showCRM('histo',this)">Historique</button>
+        <button class="crm-tab" onclick="showCRM('histo',this)">Historique CA</button>
       </div>
       <div class="crm-pane active" id="crm-vue">
         <div class="card">
@@ -271,7 +269,7 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
           <div class="card-header"><span class="ch-title">Évolution du CA mensuel</span></div>
           <div class="card-body">
             <div id="histo-chart" class="bar-chart"></div>
-            <div id="histo-table"><div class="loading"><div class="loading-spinner"></div>Chargement...</div></div>
+            <div id="histo-table"></div>
           </div>
         </div>
       </div>
@@ -289,7 +287,7 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
             <div class="compta-card"><div class="cc-label">Commandes</div><div class="cc-val" id="c-nb">—</div><div class="cc-sub">Ce mois</div></div>
           </div>
           <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px;">Détail par produit</div>
-          <div id="compta-detail"><div class="loading"><div class="loading-spinner"></div>Calcul en cours...</div></div>
+          <div id="compta-detail"><div class="loading"><div class="loading-spinner"></div>Calcul...</div></div>
           <div style="margin-top:16px;">
             <button class="export-btn" onclick="exportCSV()">📊 Exporter CSV</button>
             <button class="export-btn" onclick="window.print()">📄 Imprimer rapport</button>
@@ -304,7 +302,7 @@ body{font-family:'DM Sans',sans-serif;background:#e8edf2;min-height:100vh;}
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
-import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
+import { getFirestore, collection, getDocs, doc, updateDoc, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAPuEE5-kexy5hCWTeaLJVfo6KpD9xPIP4",
@@ -319,17 +317,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// AUTH
 document.getElementById('loginBtn').addEventListener('click', async () => {
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
-  const errorEl = document.getElementById('loginError');
-  errorEl.classList.remove('show');
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-  } catch(e) {
-    errorEl.classList.add('show');
-  }
+  document.getElementById('loginError').classList.remove('show');
+  try { await signInWithEmailAndPassword(auth, email, password); }
+  catch(e) { document.getElementById('loginError').classList.add('show'); }
 });
 document.getElementById('loginPassword').addEventListener('keypress', e => { if(e.key==='Enter') document.getElementById('loginBtn').click(); });
 document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
@@ -347,361 +340,360 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-// DATA
 let allOrders = [];
 let allClients = [];
 
 async function loadAllData() {
   try {
-    // IMPORTANT: utilise dateCommande (le bon champ de l'app)
     const ordersSnap = await getDocs(query(collection(db, 'commandes'), orderBy('dateCommande', 'desc')));
-    
-    // Dédoublonnage par ID Firebase
     const seen = new Set();
     allOrders = [];
     ordersSnap.docs.forEach(d => {
-      if(!seen.has(d.id)) {
-        seen.add(d.id);
-        allOrders.push({ id: d.id, ...d.data() });
-      }
+      if(!seen.has(d.id)) { seen.add(d.id); allOrders.push({ id: d.id, ...d.data() }); }
     });
-
     const clientsSnap = await getDocs(collection(db, 'clients'));
     allClients = clientsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-
     updateDashboard();
     updateCommandes();
     updateRoute();
     updateCRM();
     updateCompta();
-  } catch(e) {
-    console.error('Erreur:', e);
-  }
+  } catch(e) { console.error('Erreur:', e); }
 }
 
-// Récupère la date depuis dateCommande ou createdAt
 function getDate(o) {
   if(o.dateCommande?.toDate) return o.dateCommande.toDate();
   if(o.createdAt?.toDate) return o.createdAt.toDate();
-  if(o.dateCommande) return new Date(o.dateCommande);
   return new Date();
 }
-
-// Calcule les kg depuis les produits (tableau) ou products (objet)
 function calcKg(o) {
   if(o.produits && Array.isArray(o.produits)) {
-    // Format de l'app : ["Glaçons × 2 cartons (24 kg)", ...]
-    let total = 0;
-    o.produits.forEach(p => {
-      const match = p.match(/\((\d+)\s*kg\)/);
-      if(match) total += parseInt(match[1]);
-      else {
-        const kgMatch = p.match(/×\s*(\d+)\s*kg/);
-        if(kgMatch) total += parseInt(kgMatch[1]);
-      }
-    });
-    return total;
+    let t = 0;
+    o.produits.forEach(p => { const m = p.match(/\((\d+)\s*kg\)/); if(m) t += parseInt(m[1]); });
+    return t;
   }
-  const p = o.products || {};
-  return ((p.glacons||0)+(p.pilée||0))*12 + (p.co2||0);
+  const p = o.products||{}; return ((p.glacons||0)+(p.pilée||0))*12+(p.co2||0);
+}
+function calcHT(o) { return o.htTotal !== undefined ? o.htTotal : (o.totalHT || 0); }
+function getStatut(o) { return o.statut || o.status || 'En attente'; }
+function getClient(o) { return o.clientEtab || o.etablissement || o.clientNom || o.clientName || 'Client'; }
+function getAdresse(o) { return o.clientAdresse || o.address || ''; }
+function getTel(o) { return o.clientTel || o.tel || ''; }
+function getProduits(o) {
+  if(o.produits && Array.isArray(o.produits)) return o.produits.join(' · ');
+  return '';
 }
 
-function calcHT(o) {
-  // Utilise htTotal si disponible (champ de l'app)
-  if(o.htTotal !== undefined) return o.htTotal;
-  if(o.totalHT !== undefined) return o.totalHT;
-  return 0;
+// ===== OPTIMISATION GÉOGRAPHIQUE =====
+// Zones de Marseille par arrondissement + communes proches
+const ZONES = [
+  { id: 'centre', label: 'Centre-ville', emoji: '🏙️', color: '#1a7abf',
+    keywords: ['13001','13002','13003','13004','canebière','vieux.?port','noailles','belle de mai','cinq avenues','longchamp'] },
+  { id: 'sud', label: 'Marseille Sud', emoji: '🌊', color: '#0d7a5f',
+    keywords: ['13007','13008','13009','corniche','prado','mazargues','pointe.?rouge','goudes','callelongue','sainte.?anne','vieille.?chapelle','roy.?d.?espagne'] },
+  { id: 'nord', label: 'Marseille Nord', emoji: '🏭', color: '#7a4f0d',
+    keywords: ['13014','13015','13016','saint.?barthelemy','saint.?just','consolat','saint.?antoine','septemes','plan.?de.?cuques','allauch'] },
+  { id: 'est', label: 'Marseille Est', emoji: '🌿', color: '#5a0d7a',
+    keywords: ['13010','13011','13012','13013','saint.?giniez','saint.?barnabe','la.?valentine','saint.?menet','la.?boiseraie','les.?caillols','chateau.?gombert','la.?rose'] },
+  { id: 'aubagne', label: 'Aubagne & Est 13', emoji: '🏔️', color: '#7a1a1a',
+    keywords: ['13400','13420','13480','13600','aubagne','la.?ciotat','cassis','gemenos','roquevaire','saint.?zacharie'] },
+  { id: 'autres', label: 'Autres communes', emoji: '📍', color: '#6a8fa8',
+    keywords: [] }
+];
+
+function detectZone(adresse) {
+  if(!adresse) return 'autres';
+  const a = adresse.toLowerCase();
+  for(const z of ZONES) {
+    if(z.id === 'autres') continue;
+    for(const kw of z.keywords) {
+      if(new RegExp(kw).test(a)) return z.id;
+    }
+  }
+  return 'autres';
 }
 
-function getStatut(o) {
-  return o.statut || o.status || 'En attente';
+// Algorithme nearest-neighbor pour trier les arrêts dans une zone
+function sortByProximity(orders) {
+  if(orders.length <= 2) return orders;
+  // On extrait le code postal pour trier
+  const withCP = orders.map(o => {
+    const addr = getAdresse(o);
+    const cp = parseInt((addr.match(/1[34]\d{3}/)||[])[0] || '13000');
+    return { ...o, _cp: cp };
+  });
+  return withCP.sort((a,b) => a._cp - b._cp);
 }
 
-function getClient(o) {
-  return o.clientEtab || o.etablissement || o.clientNom || o.clientName || 'Client';
+function updateRoute() {
+  const pending = allOrders.filter(o => getStatut(o) !== 'Livré');
+  const totalKg = pending.reduce((s,o) => s+calcKg(o), 0);
+  const totalCA = pending.reduce((s,o) => s+calcHT(o), 0);
+
+  document.getElementById('r-stops').textContent = pending.length;
+  document.getElementById('r-kg').textContent = totalKg + ' kg';
+  document.getElementById('r-ca').textContent = totalCA.toFixed(0) + '€';
+
+  if(!pending.length) {
+    document.getElementById('route-zones').innerHTML = '<div class="empty-state"><div class="empty-ico">✅</div><div class="empty-title">Toutes les livraisons sont effectuées !</div><div class="empty-sub">Aucune commande en attente.</div></div>';
+    document.getElementById('btn-maps-main').onclick = null;
+    document.getElementById('btn-waze-main').onclick = null;
+    return;
+  }
+
+  // Grouper par zone
+  const zones = {};
+  pending.forEach(o => {
+    const z = detectZone(getAdresse(o));
+    if(!zones[z]) zones[z] = [];
+    zones[z].push(o);
+  });
+
+  // Trier chaque zone par proximité
+  Object.keys(zones).forEach(zid => { zones[zid] = sortByProximity(zones[zid]); });
+
+  // Construire l'ordre final : centre → sud → est → nord → aubagne → autres
+  const zoneOrder = ['centre','sud','est','nord','aubagne','autres'];
+  let stopNum = 1;
+  let allAddresses = [];
+  let html = '';
+
+  zoneOrder.forEach(zid => {
+    if(!zones[zid] || !zones[zid].length) return;
+    const zInfo = ZONES.find(z => z.id === zid);
+    const stops = zones[zid];
+
+    html += `<div class="zone-section">
+      <div class="zone-header" style="background:${zInfo.color};">
+        <span class="zone-title">${zInfo.emoji} ${zInfo.label}</span>
+        <span class="zone-badge">${stops.length} arrêt${stops.length>1?'s':''} · ${stops.reduce((s,o)=>s+calcKg(o),0)} kg</span>
+      </div>
+      <div class="zone-body">`;
+
+    stops.forEach(o => {
+      const addr = getAdresse(o);
+      const statut = getStatut(o);
+      const done = statut === 'Livré';
+      if(addr) allAddresses.push(addr);
+
+      html += `<div class="stop-row ${done?'completed':''}" id="sr-${o.id}">
+        <div class="stop-num-col">
+          <div class="stop-circle" style="${done?'background:#1a7a4a;':''}">${done?'✓':stopNum}</div>
+          <div class="stop-kg-small">${calcKg(o)}kg</div>
+        </div>
+        <div class="stop-info-col">
+          <div class="stop-client">${getClient(o)}</div>
+          <div class="stop-addr">${addr || 'Adresse non renseignée'}</div>
+          ${getTel(o) ? `<div class="stop-addr">📞 ${getTel(o)}</div>` : ''}
+          ${getProduits(o) ? `<div class="stop-products">${getProduits(o)}</div>` : ''}
+        </div>
+        <div class="stop-right-col">
+          <div class="stop-price">${calcHT(o).toFixed(2)}€</div>
+          <button class="stop-done-btn ${done?'done':'pending'}" onclick="${done?`markPending('${o.id}')`:`markDelivered('${o.id}')`}">
+            ${done ? '✓ Livré' : 'Marquer livré'}
+          </button>
+        </div>
+      </div>`;
+      if(!done) stopNum++;
+    });
+
+    html += '</div></div>';
+  });
+
+  document.getElementById('route-zones').innerHTML = html;
+
+  // Générer les URLs
+  const base = '9 Impasse Tontini, 13012 Marseille'; // point de départ entrepôt
+  const encodedAddrs = allAddresses.map(a => encodeURIComponent(a));
+  const mapsUrl = `https://www.google.com/maps/dir/${encodeURIComponent(base)}/${encodedAddrs.join('/')}`;
+  const wazeFirst = allAddresses[0] ? `https://waze.com/ul?q=${encodeURIComponent(allAddresses[0])}&navigate=yes` : '#';
+
+  document.getElementById('btn-maps-main').onclick = () => window.open(mapsUrl, '_blank');
+  document.getElementById('btn-waze-main').onclick = () => window.open(wazeFirst, '_blank');
+
+  // Feuille de route à copier
+  document.getElementById('btn-sms-main').onclick = () => {
+    let txt = `🚚 ROUTE DU ${new Date().toLocaleDateString('fr-FR')} — ${pending.length} arrêts · ${totalKg}kg\n\n`;
+    let num = 1;
+    zoneOrder.forEach(zid => {
+      if(!zones[zid]?.length) return;
+      const zInfo = ZONES.find(z=>z.id===zid);
+      txt += `${zInfo.emoji} ${zInfo.label.toUpperCase()}\n`;
+      zones[zid].forEach(o => {
+        txt += `${num}. ${getClient(o)}\n   ${getAdresse(o)}\n   ${getProduits(o)} · ${calcHT(o).toFixed(2)}€ HT\n`;
+        if(getTel(o)) txt += `   📞 ${getTel(o)}\n`;
+        txt += '\n';
+        num++;
+      });
+    });
+    txt += `\n📍 TOTAL : ${totalKg}kg · ${totalCA.toFixed(2)}€ HT`;
+    navigator.clipboard.writeText(txt).then(() => alert('✅ Feuille de route copiée ! Collez-la dans un SMS ou WhatsApp pour le chauffeur.'));
+  };
 }
 
-function getAdresse(o) {
-  return o.clientAdresse || o.address || '';
-}
-
-function getTel(o) {
-  return o.clientTel || o.tel || '';
-}
+// Marquer livré / en attente
+window.markDelivered = async function(id) {
+  try {
+    await updateDoc(doc(db,'commandes',id), { statut:'Livré' });
+    const o = allOrders.find(x=>x.id===id); if(o) o.statut='Livré';
+    updateRoute(); updateDashboard(); updateCommandes();
+  } catch(e) { alert('Erreur: '+e.message); }
+};
+window.markPending = async function(id) {
+  try {
+    await updateDoc(doc(db,'commandes',id), { statut:'En attente' });
+    const o = allOrders.find(x=>x.id===id); if(o) o.statut='En attente';
+    updateRoute(); updateDashboard(); updateCommandes();
+  } catch(e) { alert('Erreur: '+e.message); }
+};
 
 // DASHBOARD
 function updateDashboard() {
   const today = new Date(); today.setHours(0,0,0,0);
   const todayOrders = allOrders.filter(o => getDate(o) >= today);
-  const totalKg = todayOrders.reduce((s,o) => s + calcKg(o), 0);
-  const totalCA = todayOrders.reduce((s,o) => s + calcHT(o), 0);
-
+  const pending = allOrders.filter(o => getStatut(o) !== 'Livré');
   document.getElementById('m-commandes').textContent = todayOrders.length;
-  document.getElementById('m-kg').textContent = totalKg + ' kg';
-  document.getElementById('m-ca').textContent = totalCA.toFixed(2) + ' €';
+  document.getElementById('m-pending').textContent = pending.length;
+  document.getElementById('m-ca').textContent = todayOrders.reduce((s,o)=>s+calcHT(o),0).toFixed(2)+'€';
   document.getElementById('m-clients').textContent = allClients.length;
-
   const now = new Date();
-  document.getElementById('dash-last-update').textContent = 'Mis à jour à ' + now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
-
+  document.getElementById('dash-last-update').textContent = 'Mis à jour à '+now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
   const recent = allOrders.slice(0,5);
   document.getElementById('dash-orders').innerHTML = recent.length
-    ? recent.map(o => renderOrderItem(o, false)).join('')
-    : '<div class="empty-state"><div class="empty-ico">📦</div><div class="empty-title">Aucune commande</div><div class="empty-sub">Les commandes apparaîtront ici en temps réel</div></div>';
+    ? recent.map(o => {
+        const statut = getStatut(o);
+        const statusTag = statut==='Livré' ? '<span class="oi-tag tag-delivered">✓ Livré</span>' : '<span class="oi-tag tag-pending">⏳ En attente</span>';
+        return `<div class="order-item">
+          <div class="oi-left">
+            <div class="oi-name">${getClient(o)}</div>
+            <div class="oi-detail">${getDate(o).toLocaleDateString('fr-FR')} ${getDate(o).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}${getAdresse(o)?' · '+getAdresse(o):''}</div>
+            ${getProduits(o)?`<div class="oi-detail">${getProduits(o)}</div>`:''}
+          </div>
+          <div class="oi-right"><div class="oi-amount">${calcHT(o).toFixed(2)}€</div>${statusTag}</div>
+        </div>`;
+      }).join('')
+    : '<div class="empty-state"><div class="empty-ico">📦</div><div class="empty-title">Aucune commande</div></div>';
 }
 
 // COMMANDES
 let currentFilter = 'all';
 function updateCommandes() { filterOrders(currentFilter); }
-
 window.filterOrders = function(filter, btn) {
   currentFilter = filter;
-  if(btn) {
-    document.querySelectorAll('#tab-commandes .crm-tab').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-  const filtered = filter === 'all' ? allOrders : allOrders.filter(o => getStatut(o) === filter);
-  document.getElementById('cmd-count').textContent = filtered.length + ' commande' + (filtered.length>1?'s':'');
+  if(btn) { document.querySelectorAll('#tab-commandes .crm-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  const filtered = filter==='all' ? allOrders : allOrders.filter(o=>getStatut(o)===filter);
+  document.getElementById('cmd-count').textContent = filtered.length+' commande'+(filtered.length>1?'s':'');
   document.getElementById('orders-list').innerHTML = filtered.length
-    ? filtered.map(o => renderOrderItem(o, true)).join('')
+    ? filtered.map(o => {
+        const statut = getStatut(o);
+        const ht = calcHT(o);
+        const statusTag = statut==='Livré' ? '<span class="oi-tag tag-delivered">✓ Livré</span>' : '<span class="oi-tag tag-pending">⏳ En attente</span>';
+        const actionBtn = statut!=='Livré'
+          ? `<button class="status-btn pending" onclick="markDelivered('${o.id}')">Marquer livré ✓</button>`
+          : `<button class="status-btn" onclick="markPending('${o.id}')">Remettre en attente</button>`;
+        return `<div class="order-item">
+          <div class="oi-left" style="flex:1;">
+            <div class="oi-name">${getClient(o)}</div>
+            <div class="oi-detail">${getDate(o).toLocaleDateString('fr-FR')} ${getDate(o).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})} · ${getAdresse(o)}</div>
+            ${getTel(o)?`<div class="oi-detail">📞 ${getTel(o)}</div>`:''}
+            ${getProduits(o)?`<div class="oi-detail">${getProduits(o)}</div>`:''}
+            <div class="oi-detail" style="font-weight:600;margin-top:4px;">HT: ${ht.toFixed(2)}€ · TTC: ${(ht*1.055).toFixed(2)}€</div>
+            <div style="margin-top:6px;">${actionBtn}</div>
+          </div>
+          <div class="oi-right">${statusTag}</div>
+        </div>`;
+      }).join('')
     : '<div class="empty-state"><div class="empty-ico">📦</div><div class="empty-title">Aucune commande</div></div>';
 };
 
-function renderOrderItem(o, full=false) {
-  const date = getDate(o);
-  const dateStr = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
-  const kg = calcKg(o);
-  const ht = calcHT(o);
-  const ttc = o.ttcTotal || (ht * 1.055);
-  const statut = getStatut(o);
-  const statusTag = statut === 'Livré'
-    ? '<span class="oi-tag tag-delivered">✓ Livré</span>'
-    : '<span class="oi-tag tag-pending">⏳ En attente</span>';
-  
-  const produits = o.produits ? o.produits.join('<br>') : '';
-  const adresse = getAdresse(o);
-  const tel = getTel(o);
-
-  const actionBtn = full ? (statut !== 'Livré'
-    ? `<button class="status-btn pending" onclick="markDelivered('${o.id}')">Marquer livré ✓</button>`
-    : `<button class="status-btn" onclick="markPending('${o.id}')">Remettre en attente</button>`) : '';
-
-  return `<div class="order-item" id="order-${o.id}">
-    <div class="oi-left" style="flex:1;">
-      <div class="oi-name">${getClient(o)}</div>
-      <div class="oi-detail">${dateStr}${adresse ? ' · ' + adresse : ''}${tel ? ' · 📞 ' + tel : ''}</div>
-      ${produits ? `<div class="oi-detail" style="margin-top:4px;">${produits}</div>` : ''}
-      ${full ? `<div class="oi-detail" style="margin-top:4px;font-weight:600;">HT: ${ht.toFixed(2)}€ · TTC: ${ttc.toFixed(2)}€</div>` : ''}
-      ${full ? `<div style="margin-top:6px;display:flex;gap:6px;">${actionBtn}</div>` : ''}
-    </div>
-    <div class="oi-right">
-      <div class="oi-amount">${kg > 0 ? kg + ' kg · ' : ''}${ht.toFixed(2)}€</div>
-      ${statusTag}
-    </div>
-  </div>`;
-}
-
-// Marquer livré
-window.markDelivered = async function(id) {
-  try {
-    await updateDoc(doc(db, 'commandes', id), { statut: 'Livré' });
-    const o = allOrders.find(x => x.id === id);
-    if(o) o.statut = 'Livré';
-    updateCommandes();
-    updateRoute();
-    updateDashboard();
-  } catch(e) { alert('Erreur: ' + e.message); }
-};
-
-window.markPending = async function(id) {
-  try {
-    await updateDoc(doc(db, 'commandes', id), { statut: 'En attente' });
-    const o = allOrders.find(x => x.id === id);
-    if(o) o.statut = 'En attente';
-    updateCommandes();
-    updateRoute();
-  } catch(e) { alert('Erreur: ' + e.message); }
-};
-
-// ROUTE
-function updateRoute() {
-  const pending = allOrders.filter(o => getStatut(o) !== 'Livré');
-  document.getElementById('route-stops').textContent = pending.length;
-  const totalKg = pending.reduce((s,o) => s + calcKg(o), 0);
-  document.getElementById('route-kg').textContent = totalKg + ' kg';
-
-  if(!pending.length) {
-    document.getElementById('route-stops-list').innerHTML = '<div class="empty-state"><div class="empty-ico">🗺️</div><div class="empty-title">Aucune livraison en attente</div></div>';
-    document.getElementById('route-btns').style.display = 'none';
-    return;
-  }
-
-  let html = '<div class="route-box"><div class="route-title">🗺️ Itinéraire — ' + pending.length + ' arrêt(s)</div><div class="stops">';
-  pending.forEach((o,i) => {
-    const addr = getAdresse(o);
-    html += `<div class="stop">
-      <div class="stop-num">${i+1}</div>
-      <div>
-        <div class="stop-name">${getClient(o)}</div>
-        ${addr ? `<div class="stop-addr">${addr}</div>` : ''}
-        <div class="stop-kg">${calcKg(o)} kg · ${calcHT(o).toFixed(2)}€ HT</div>
-      </div>
-    </div>`;
-    if(i < pending.length-1) html += '<div class="connector"></div>';
-  });
-  html += '</div></div>';
-  document.getElementById('route-stops-list').innerHTML = html;
-  document.getElementById('route-btns').style.display = 'flex';
-
-  const addrs = pending.map(o => encodeURIComponent(getAdresse(o)||'Marseille')).filter(Boolean).join('/');
-  document.getElementById('btn-maps').onclick = () => window.open(`https://www.google.com/maps/dir//${addrs}`,'_blank');
-  document.getElementById('btn-waze').onclick = () => {
-    const addr = getAdresse(pending[0]);
-    window.open(`https://waze.com/ul?q=${encodeURIComponent(addr)}&navigate=yes`,'_blank');
-  };
-}
-
 // CRM
 function updateCRM() {
-  // Clients avec CA calculé depuis commandes réelles
   const clientsWithCA = allClients.map(c => {
-    const clientOrders = allOrders.filter(o => o.clientEmail === c.email || o.clientId === c.id);
-    const ca = clientOrders.reduce((s,o) => s + calcHT(o), 0);
-    return { ...c, totalCommandes: clientOrders.length, caTotal: ca };
-  }).sort((a,b) => b.caTotal - a.caTotal);
+    const co = allOrders.filter(o=>o.clientEmail===c.email||o.clientId===c.id);
+    return {...c, totalCommandes:co.length, caTotal:co.reduce((s,o)=>s+calcHT(o),0)};
+  }).sort((a,b)=>b.caTotal-a.caTotal);
 
-  document.getElementById('crm-clients-list').innerHTML = clientsWithCA.length ? `
-    <table class="data-table">
-      <thead><tr><th>#</th><th>Nom</th><th>Établissement</th><th>Email</th><th>Tél</th><th>Commandes</th><th>CA HT</th></tr></thead>
-      <tbody>${clientsWithCA.map((c,i) => `
-        <tr>
-          <td>${i+1}</td>
-          <td>${c.nom||'—'}</td>
-          <td>${c.etablissement||'—'}</td>
-          <td>${c.email||'—'}</td>
-          <td>${c.telephone||c.tel||'—'}</td>
-          <td>${c.totalCommandes}</td>
-          <td><strong>${c.caTotal.toFixed(2)} €</strong></td>
-        </tr>`).join('')}
-      </tbody>
-    </table>` : '<div class="empty-state"><div class="empty-ico">👥</div><div class="empty-title">Aucun client inscrit</div></div>';
-
+  document.getElementById('crm-clients-list').innerHTML = clientsWithCA.length
+    ? `<table class="data-table">
+        <thead><tr><th>#</th><th>Nom</th><th>Établissement</th><th>Email</th><th>Tél</th><th>Commandes</th><th>CA HT</th></tr></thead>
+        <tbody>${clientsWithCA.map((c,i)=>`<tr>
+          <td>${i+1}</td><td>${c.nom||'—'}</td><td>${c.etablissement||'—'}</td>
+          <td>${c.email||'—'}</td><td>${c.telephone||c.tel||'—'}</td>
+          <td>${c.totalCommandes}</td><td><strong>${c.caTotal.toFixed(2)}€</strong></td>
+        </tr>`).join('')}</tbody>
+      </table>`
+    : '<div class="empty-state"><div class="empty-ico">👥</div><div class="empty-title">Aucun client inscrit</div></div>';
   updateHistoChart();
 }
 
 function updateHistoChart() {
   const months = ['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
-  const now = new Date();
-  const currentMonth = now.getMonth();
-  const monthlyCAs = new Array(6).fill(0);
-
-  allOrders.forEach(o => {
-    const d = getDate(o);
-    const diff = currentMonth - d.getMonth();
-    if(diff >= 0 && diff < 6) monthlyCAs[5-diff] += calcHT(o);
-  });
-
-  const maxCA = Math.max(...monthlyCAs, 1);
-  let chartHTML = '';
-  for(let i=0;i<6;i++) {
-    const mIdx = (currentMonth - 5 + i + 12) % 12;
-    const h = Math.max(4, (monthlyCAs[i]/maxCA)*110);
-    chartHTML += `<div class="bar-col ${i===5?'current':''}">
-      <div class="bar-value">${monthlyCAs[i]>0?monthlyCAs[i].toFixed(0)+'€':'—'}</div>
+  const now = new Date(); const cm = now.getMonth();
+  const cas = new Array(6).fill(0);
+  allOrders.forEach(o => { const d=getDate(o); const diff=cm-d.getMonth(); if(diff>=0&&diff<6) cas[5-diff]+=calcHT(o); });
+  const max = Math.max(...cas,1);
+  document.getElementById('histo-chart').innerHTML = Array.from({length:6},(_,i)=>{
+    const mi=(cm-5+i+12)%12; const h=Math.max(4,(cas[i]/max)*110);
+    return `<div class="bar-col ${i===5?'current':''}">
+      <div class="bar-value">${cas[i]>0?cas[i].toFixed(0)+'€':'—'}</div>
       <div class="bar-fill" style="height:${h}px;"></div>
-      <div class="bar-label">${months[mIdx]}</div>
+      <div class="bar-label">${months[mi]}</div>
     </div>`;
-  }
-  document.getElementById('histo-chart').innerHTML = chartHTML;
-  document.getElementById('histo-table').innerHTML = `
-    <table class="data-table" style="margin-top:16px;">
-      <thead><tr><th>Mois</th><th>Commandes</th><th>CA HT</th></tr></thead>
-      <tbody>${Array.from({length:6},(_,i)=>{
-        const mIdx=(currentMonth-5+i+12)%12;
-        const cmds=allOrders.filter(o=>getDate(o).getMonth()===mIdx).length;
-        return `<tr><td>${months[mIdx]}</td><td>${cmds}</td><td>${monthlyCAs[i].toFixed(2)}€</td></tr>`;
-      }).join('')}</tbody>
-    </table>`;
+  }).join('');
+  document.getElementById('histo-table').innerHTML = `<table class="data-table" style="margin-top:16px;">
+    <thead><tr><th>Mois</th><th>Commandes</th><th>CA HT</th></tr></thead>
+    <tbody>${Array.from({length:6},(_,i)=>{
+      const mi=(cm-5+i+12)%12;
+      const cmds=allOrders.filter(o=>getDate(o).getMonth()===mi).length;
+      return `<tr><td>${months[mi]}</td><td>${cmds}</td><td>${cas[i].toFixed(2)}€</td></tr>`;
+    }).join('')}</tbody>
+  </table>`;
 }
 
 // COMPTA
 function updateCompta() {
-  const now = new Date();
-  const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
-  const monthOrders = allOrders.filter(o => getDate(o) >= firstDay);
-  const ht = monthOrders.reduce((s,o) => s + calcHT(o), 0);
-  const tva = ht * 0.055;
-  const ttc = ht + tva;
-
-  document.getElementById('c-ht').textContent = ht.toFixed(2) + ' €';
-  document.getElementById('c-tva').textContent = tva.toFixed(2) + ' €';
-  document.getElementById('c-ttc').textContent = ttc.toFixed(2) + ' €';
-  document.getElementById('c-nb').textContent = monthOrders.length;
-  document.getElementById('compta-period').textContent = now.toLocaleString('fr-FR',{month:'long',year:'numeric'});
-
-  // Calcul produits depuis les produits texte
-  let glaconsKg=0, pileeKg=0, co2Kg=0;
-  monthOrders.forEach(o => {
-    if(o.produits && Array.isArray(o.produits)) {
-      o.produits.forEach(p => {
-        const kg = parseInt((p.match(/\((\d+)\s*kg\)/)||[])[1]||0);
-        if(p.includes('Glaçons')) glaconsKg += kg;
-        else if(p.includes('pilée')) pileeKg += kg;
-        else if(p.includes('CO₂')) co2Kg += kg;
-      });
-    }
-  });
-
-  document.getElementById('compta-detail').innerHTML = `
-    <table class="data-table">
-      <thead><tr><th>Produit</th><th>Qté</th><th>CA HT</th><th>TVA 5,5%</th><th>CA TTC</th></tr></thead>
-      <tbody>
-        <tr><td>Glaçons (0,95€/kg)</td><td>${glaconsKg} kg</td><td>${(glaconsKg*0.95).toFixed(2)}€</td><td>${(glaconsKg*0.95*0.055).toFixed(2)}€</td><td>${(glaconsKg*0.95*1.055).toFixed(2)}€</td></tr>
-        <tr><td>Glace pilée (1,10€/kg)</td><td>${pileeKg} kg</td><td>${(pileeKg*1.10).toFixed(2)}€</td><td>${(pileeKg*1.10*0.055).toFixed(2)}€</td><td>${(pileeKg*1.10*1.055).toFixed(2)}€</td></tr>
-        <tr><td>Glace CO₂ (6,00€/kg)</td><td>${co2Kg} kg</td><td>${(co2Kg*6).toFixed(2)}€</td><td>${(co2Kg*6*0.055).toFixed(2)}€</td><td>${(co2Kg*6*1.055).toFixed(2)}€</td></tr>
-      </tbody>
-    </table>`;
+  const now = new Date(); const first = new Date(now.getFullYear(),now.getMonth(),1);
+  const mo = allOrders.filter(o=>getDate(o)>=first);
+  const ht=mo.reduce((s,o)=>s+calcHT(o),0); const tva=ht*.055; const ttc=ht+tva;
+  document.getElementById('c-ht').textContent=ht.toFixed(2)+'€';
+  document.getElementById('c-tva').textContent=tva.toFixed(2)+'€';
+  document.getElementById('c-ttc').textContent=ttc.toFixed(2)+'€';
+  document.getElementById('c-nb').textContent=mo.length;
+  document.getElementById('compta-period').textContent=now.toLocaleString('fr-FR',{month:'long',year:'numeric'});
+  let gKg=0,pKg=0,cKg=0;
+  mo.forEach(o=>{ if(o.produits&&Array.isArray(o.produits)) o.produits.forEach(p=>{
+    const kg=parseInt((p.match(/\((\d+)\s*kg\)/)||[])[1]||0);
+    if(p.includes('Glaçons')) gKg+=kg; else if(p.includes('pilée')) pKg+=kg; else if(p.includes('CO₂')) cKg+=kg;
+  });});
+  document.getElementById('compta-detail').innerHTML=`<table class="data-table">
+    <thead><tr><th>Produit</th><th>Qté</th><th>CA HT</th><th>TVA 5,5%</th><th>CA TTC</th></tr></thead>
+    <tbody>
+      <tr><td>Glaçons (0,95€/kg)</td><td>${gKg}kg</td><td>${(gKg*.95).toFixed(2)}€</td><td>${(gKg*.95*.055).toFixed(2)}€</td><td>${(gKg*.95*1.055).toFixed(2)}€</td></tr>
+      <tr><td>Glace pilée (1,10€/kg)</td><td>${pKg}kg</td><td>${(pKg*1.10).toFixed(2)}€</td><td>${(pKg*1.10*.055).toFixed(2)}€</td><td>${(pKg*1.10*1.055).toFixed(2)}€</td></tr>
+      <tr><td>Glace CO₂ (6,00€/kg)</td><td>${cKg}kg</td><td>${(cKg*6).toFixed(2)}€</td><td>${(cKg*6*.055).toFixed(2)}€</td><td>${(cKg*6*1.055).toFixed(2)}€</td></tr>
+    </tbody>
+  </table>`;
 }
 
 // EXPORT
 window.exportCSV = function() {
-  const rows = [['Date','Client','Établissement','Adresse','Téléphone','Produits','HT','TVA','TTC','Statut']];
-  allOrders.forEach(o => {
-    const d = getDate(o);
-    const ht = calcHT(o);
-    rows.push([
-      d.toLocaleDateString('fr-FR'),
-      o.clientNom||o.clientName||'',
-      o.clientEtab||o.etablissement||'',
-      getAdresse(o),
-      getTel(o),
-      (o.produits||[]).join(' | '),
-      ht.toFixed(2),
-      (ht*0.055).toFixed(2),
-      (ht*1.055).toFixed(2),
-      getStatut(o)
-    ]);
-  });
-  const csv = rows.map(r => r.join(';')).join('\n');
-  const blob = new Blob(['\uFEFF'+csv], {type:'text/csv;charset=utf-8;'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'froidepannage-commandes-' + new Date().toISOString().slice(0,10) + '.csv';
-  a.click();
+  const rows=[['Date','Client','Établissement','Adresse','Tel','Produits','HT','TVA','TTC','Statut']];
+  allOrders.forEach(o=>{ const ht=calcHT(o); rows.push([getDate(o).toLocaleDateString('fr-FR'),o.clientNom||'',o.clientEtab||'',getAdresse(o),getTel(o),getProduits(o),ht.toFixed(2),(ht*.055).toFixed(2),(ht*1.055).toFixed(2),getStatut(o)]); });
+  const blob=new Blob(['\uFEFF'+rows.map(r=>r.join(';')).join('\n')],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='commandes-'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
 };
 
-// NAVIGATION
+// NAV
 window.showTab = function(tab, btn) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
   if(btn) btn.classList.add('active');
 };
-
 window.showCRM = function(pane, btn) {
-  document.querySelectorAll('.crm-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.crm-pane').forEach(p=>p.classList.remove('active'));
   document.getElementById('crm-'+pane).classList.add('active');
-  document.querySelectorAll('#tab-crm > .crm-tabs > .crm-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#tab-crm > .crm-tabs > .crm-tab').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
   if(pane==='histo') updateHistoChart();
 };
