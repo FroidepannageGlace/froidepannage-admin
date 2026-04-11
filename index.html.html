@@ -641,7 +641,7 @@ function renderClients(list) {
   document.getElementById('client-count').textContent = list.length + ' client' + (list.length>1?'s':'');
   document.getElementById('crm-clients-list').innerHTML = list.length
     ? '<table class="data-table"><thead><tr><th>#</th><th>Nom</th><th>Etablissement</th><th>Email</th><th>Tel</th><th>Cmdes</th><th>CA HT</th><th>Actions</th></tr></thead><tbody>' +
-      list.map(function(c,i){ return '<tr><td>'+(i+1)+'</td><td>'+(c.nom||'--')+'</td><td>'+(c.etablissement||'--')+'</td><td>'+(c.email||'--')+'</td><td>'+(c.telephone||c.tel||'--')+'</td><td>'+c.totalCommandes+'</td><td><strong>'+c.caTotal.toFixed(2)+'euros</strong></td><td style="white-space:nowrap;"><button class="btn-exp" onclick="exportClientCSV(this)" data-id="'+c.id+'" data-nom="'+(c.nom||'client').replace(/[^a-zA-Z0-9 ]/g,'')+'">Export</button> <button class="btn-del" onclick="askDeleteClient(this)" data-id="'+c.id+'" data-nom="'+(c.nom||'client').replace(/[^a-zA-Z0-9 ]/g,'')+'">Supprimer</button></td></tr>'; }).join('') +
+      list.map(function(c,i){ return '<tr><td>'+(i+1)+'</td><td>'+(c.nom||'--')+'</td><td>'+(c.etablissement||'--')+'</td><td>'+(c.email||'--')+'</td><td>'+(c.telephone||c.tel||'--')+'</td><td>'+c.totalCommandes+'</td><td><strong>'+c.caTotal.toFixed(2)+'</strong></td><td style="white-space:nowrap;"><button class="btn-exp" onclick="exportClientCSV(this)" data-id="'+c.id+'" data-nom="'+(c.nom||'client').replace(/[^a-zA-Z0-9 ]/g,'')+'">Export</button> <button class="btn-del" onclick="askDeleteClient(this)" data-id="'+c.id+'" data-nom="'+(c.nom||'client').replace(/[^a-zA-Z0-9 ]/g,'')+'">Supprimer</button></td></tr>'; }).join('') +
       '</tbody></table>'
     : '<div class="empty-state"><div class="empty-title">Aucun resultat</div></div>';
 }
@@ -722,9 +722,8 @@ function showModal(title, text, onOk) {
   document.getElementById('modalOkBtn').onclick = function() { closeModal(); onOk(); };
   document.getElementById('modalBg').classList.add('show');
 }
-// SUPPRIMER COMMANDE
 window.askDeleteOrder = function(id) {
-  showModal('Supprimer cette commande ?', 'Cette commande sera supprimee definitivement.', function() { doDeleteOrder(id); });
+  showModal('Supprimer cette commande ?', 'Suppression definitive.', function() { doDeleteOrder(id); });
 };
 async function doDeleteOrder(id) {
   try {
@@ -733,7 +732,6 @@ async function doDeleteOrder(id) {
     toast('Commande supprimee'); await loadAllData();
   } catch(e) { toast('Erreur : '+e.message); }
 }
-// SUPPRIMER CLIENT
 window.askDeleteClient = function(btn) {
   var id=btn.dataset.id; var nom=btn.dataset.nom;
   showModal('Supprimer '+nom+' ?', 'Le client et ses commandes seront supprimes.', function() { doDeleteClient(id); });
@@ -747,7 +745,6 @@ async function doDeleteClient(id) {
     toast('Client supprime'); await loadAllData();
   } catch(e) { toast('Erreur : '+e.message); }
 }
-// EXPORT CLIENT
 window.exportClientCSV = function(btn) {
   var id=btn.dataset.id; var nom=btn.dataset.nom;
   var cl=allClients.find(function(c){return c.id===id;});
@@ -755,8 +752,7 @@ window.exportClientCSV = function(btn) {
   if(!cmds.length){toast('Aucune commande pour ce client');return;}
   var rows=[['Date','Client','Etablissement','Produits','HT','TTC','Statut']];
   cmds.forEach(function(o){var ht=calcHT(o);rows.push([getDate(o).toLocaleDateString('fr-FR'),o.clientNom||'',o.clientEtab||'',getProduits(o),ht.toFixed(2),(ht*1.055).toFixed(2),getStatut(o)]);});
-  var csv='﻿'+rows.map(function(r){return r.join(';');}).join('
-');
+  var csv='\uFEFF'+rows.map(function(r){return r.join(';');}).join('\n');
   var blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
   var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='historique-'+nom+'-'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
   toast('Export telecharge !');
